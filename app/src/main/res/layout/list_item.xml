@@ -6,9 +6,9 @@
     <TextView
         android:id="@+id/tv_item_Name"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:fontFamily="monospace"
         android:textColor="@android:color/primary_text_dark"
-        android:textSize="28sp" />
+        android:textSize="22sp" />
 
 </FrameLayout>
