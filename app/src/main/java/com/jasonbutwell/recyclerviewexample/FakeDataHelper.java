@@ -8,6 +8,7 @@ public class FakeDataHelper {
 
     public static String[] generateFakeData() {
 
+        // Create some fake data as an array of Strings
         String[] names = {
                 "Fred Blogs",
                 "John Doe",
@@ -21,6 +22,7 @@ public class FakeDataHelper {
                 "Mike Hunt"
         };
 
+        // Return that array
         return names;
     }
 
