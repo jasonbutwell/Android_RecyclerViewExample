@@ -12,10 +12,10 @@ import android.widget.TextView;
 
 class CustomViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-    private TextView listItemView;  // location for the view we want to change
-    private CustomRecyclerViewAdapter.ListItemClickListener mOnClickListener;
+    private TextView listItemView;                      // location for the view we want to change
+    private ListItemClickListener mOnClickListener;     // store location for list click listener
 
-    public CustomViewHolder(View itemView, CustomRecyclerViewAdapter.ListItemClickListener mOnClickListener) {
+    public CustomViewHolder(View itemView, ListItemClickListener mOnClickListener) {
         super(itemView);
 
         // Get a reference to the view to change
@@ -29,13 +29,13 @@ class CustomViewHolder extends RecyclerView.ViewHolder implements View.OnClickLi
     // Binding of data from our view holder which will set the view being looked at to the data we want
 
     public void bind(String text) {
-        listItemView.setText(text);
+        listItemView.setText(text);     // set the text of the view
     }
 
     // Our internal click handler that signifies what item was actually clicked
 
     @Override
     public void onClick(View view) {
-        mOnClickListener.onListItemClick(getAdapterPosition());
+        mOnClickListener.onListItemClick(getAdapterPosition()); // passes the adapter position on
     }
 }

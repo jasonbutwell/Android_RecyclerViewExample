@@ -6,7 +6,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements CustomRecyclerViewAdapter.ListItemClickListener {
+public class MainActivity extends AppCompatActivity implements ListItemClickListener {
 
     private static final int NUMBER_OF_ITEMS_IN_GRID_ROW = 2;
 
@@ -31,12 +31,13 @@ public class MainActivity extends AppCompatActivity implements CustomRecyclerVie
         // Setup the RecyclerView
         mList = (RecyclerView) findViewById(R.id.recyclerView);
 
-        //mList.setLayoutManager(new LinearLayoutManager(this));
-
         // Grid Layout
         mList.setLayoutManager(new GridLayoutManager(this,NUMBER_OF_ITEMS_IN_GRID_ROW));
 
-        // Used to improve performance
+        // Uncomment this line to present the data as a Linear Layout
+        //mList.setLayoutManager(new LinearLayoutManager(this));
+
+        // Used to improve performance - (Should only use this if views are fixed size)
         mList.setHasFixedSize(true);
 
         // Setup the adapter with the data to view and the click listener
@@ -44,16 +45,15 @@ public class MainActivity extends AppCompatActivity implements CustomRecyclerVie
         mList.setAdapter(mAdapter);
     }
 
-    // What we want to happen when a recyclerview list item is clicked
+    // What we want to happen when a Recyclerview list item is clicked
     @Override
     public void onListItemClick(int clickedItemIndex) {
 
         // If there are any other toast messages existing, cancel them
-        if ( mToast != null )
-            mToast.cancel();
+        if ( mToast != null ) mToast.cancel();
 
         // Just display a toast message with the index of the item clicked on for now.
-        String message = "You clicked on item #"+String.valueOf(clickedItemIndex);
+        String message = "You clicked on item #" + String.valueOf(clickedItemIndex);
 
         // Create new Toast message and display it
         mToast = Toast.makeText(this, message, Toast.LENGTH_SHORT);
