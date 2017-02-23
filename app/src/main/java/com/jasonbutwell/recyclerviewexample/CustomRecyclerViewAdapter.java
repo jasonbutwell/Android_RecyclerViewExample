@@ -35,8 +35,18 @@ public class CustomRecyclerViewAdapter extends RecyclerView.Adapter<CustomRecycl
     }
 
     @Override
+    public int getItemViewType(int position) {
+        return super.getItemViewType(position);
+    }
+
+    @Override
     public int getItemCount() {
         return dataItems.length;
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return super.getItemId(position);
     }
 
     class CustomViewHolder extends RecyclerView.ViewHolder {
@@ -46,11 +56,11 @@ public class CustomRecyclerViewAdapter extends RecyclerView.Adapter<CustomRecycl
         public CustomViewHolder(View itemView) {
             super(itemView);
 
-            listItemNumberView = (TextView) itemView.findViewById(R.id.tv_item);
+            listItemNumberView = (TextView) itemView.findViewById(R.id.tv_item_Name);
         }
 
-        void bind(int listIndex) {
-            listItemNumberView.setText(dataItems[listIndex]);
+        void bind(int position) {
+            listItemNumberView.setText(dataItems[position]);
         }
 
     }

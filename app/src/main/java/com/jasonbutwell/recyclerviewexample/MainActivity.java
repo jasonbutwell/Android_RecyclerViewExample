@@ -17,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        dataItems = FakeDataHelper.generateFakeData();
+
         mList = (RecyclerView) findViewById(R.id.recyclerView_id);
         mList.setLayoutManager(new LinearLayoutManager(this));
         mList.setHasFixedSize(true);
