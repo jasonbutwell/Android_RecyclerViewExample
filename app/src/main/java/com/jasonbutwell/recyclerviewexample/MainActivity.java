@@ -8,10 +8,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements CustomRecyclerViewAdapter.ListItemClickListener {
 
-    // Somewhere to store the fake name data
-    private String[] dataItems;
-
-    // Class variables for the recyclerview and the adapter
+    // Class variables for the RecyclerView and the adapter
     private CustomRecyclerViewAdapter mAdapter;
     private RecyclerView mList;
 
@@ -19,6 +16,9 @@ public class MainActivity extends AppCompatActivity implements CustomRecyclerVie
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Somewhere to store the fake name data
+        String[] dataItems;
 
         // Create some fake data
         dataItems = FakeDataHelper.generateFakeData();
