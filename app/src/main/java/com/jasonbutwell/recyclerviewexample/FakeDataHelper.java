@@ -19,7 +19,7 @@ public class FakeDataHelper {
                 "Hose Barrera",
                 "John Connor",
                 "Arthur Bottom",
-                "Mike Hunt"
+                "Mike Munt"
         };
 
         // Return that array

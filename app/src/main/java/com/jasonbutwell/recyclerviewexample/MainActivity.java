@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements CustomRecyclerVie
             mToast.cancel();
 
         // Just display a toast message with the index of the item clicked on for now.
-        String message = "You clicked on item: "+String.valueOf(clickedItemIndex);
+        String message = "You clicked on item #"+String.valueOf(clickedItemIndex);
 
         // Create new Toast message and display it
         mToast = Toast.makeText(this, message, Toast.LENGTH_SHORT);
